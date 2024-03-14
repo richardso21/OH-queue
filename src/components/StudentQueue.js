@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import { anonArray } from '../references/anon_names/animals';
+import { anonArray } from '../references/anon_names/animals';
 // import { anonArray } from '../references/anon_names/love';
-import { anonArray } from "../references/anon_names/march_madness";
+// import { anonArray } from "../references/anon_names/march_madness";
 // import { anonArray } from '../references/anon_names/fruits';
 // import { anonArray } from '../references/anon_names/spooky';
 // import { anonArray } from "../references/anon_names/christmas";
