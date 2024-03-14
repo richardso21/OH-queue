@@ -1,0 +1,37 @@
+.alert-box {
+  display: flex;
+  flex-direction: column;
+  background-color: #fd6262;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 150px auto 0; /* Set auto for horizontal centering */
+  color: white;
+  text-align: center;
+  font-size: 5em;
+  font-weight: 1000;
+  padding: 30px;
+  text-shadow: 
+  -4px -4px 0 red,  
+   4px -4px 0 red,
+  -4px  4px 0 red,
+   4px  4px 0 red;
+}
+
+.alert-subbox {
+  display: flex;
+  flex-direction: column;
+  background-color: #922c2c;
+  border-radius: 0px 0px 12px 12px;
+  padding: 10px;
+  color: #fd6262;
+  font-size: 3em;
+  width: 90%;
+  margin: 0 auto; /* Set auto for horizontal centering */
+}
+
+.alert-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

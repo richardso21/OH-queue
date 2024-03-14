@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,900');
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text');
+@import url('https://fonts.googleapis.com/css?family=Inter');
+@import url('https://fonts.googleapis.com/css?family=Ceviche+One');
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+@import url('https://fonts.googleapis.com/css?family=Kenia');
+@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Carter+One');
+@import url('https://fonts.googleapis.com/css?family=Ultra');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+@import url('https://fonts.googleapis.com/css?family=Oi');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue');
+@import url('https://fonts.googleapis.com/css?family=Lobster');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Rakkas');
+@import url('https://fonts.googleapis.com/css?family=Kavoon');
+@import url('https://fonts.googleapis.com/css?family=Corben');
+
+.Header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    border-bottom: 3px solid white;
+}
+
+#title {
+    margin: 0 auto;
+    font-weight: 400;
+    font-size: 100px;
+    text-shadow: 3px 1px 1px rgba(255, 255, 255, .8);
+    background: linear-gradient(
+        to right,
+        #7953cd 20%,
+        #00affa 30%,
+        #0190cd 70%,
+        #764ada 80%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 500% auto;
+    animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#time {
+    margin-right: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: gray;
+    font-family: 'Inter';
+    font-size: 60px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border: solid 3px gray;
+    border-radius: 12px;
+	box-shadow: 0px 4px 8px rgba(242, 242, 242, 0.1);
+}

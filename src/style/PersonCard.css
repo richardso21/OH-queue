@@ -1,0 +1,46 @@
+.person-card {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    width: 225px;
+    background-color: #222;
+    border: 3px solid #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 6px;
+    transition: .2s;
+  }
+  
+
+.person-image {
+    height: 84%;
+    background-size: cover;
+    background-position: center;
+}
+  
+.person-name {
+    height: 16%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #444;
+}
+
+.person-name.remote {
+  height: 16%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #fff;
+  background-color: #444;
+}
+
+.person-card.busy {
+  filter: grayscale(100%);
+  scale: .75;
+}
