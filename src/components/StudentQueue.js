@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { anonArray } from '../references/anon_names/animals';
+import { anonArray } from "../references/anon_names/animals";
 // import { anonArray } from '../references/anon_names/love';
 // import { anonArray } from "../references/anon_names/march_madness";
 // import { anonArray } from '../references/anon_names/fruits';
@@ -26,7 +26,7 @@ class StudentQueue extends Component {
     if (event.keyCode === 13) {
       // enter
       // this.submitGTID();
-      let name =  `Anon ${anonArray[this.state.nextID]}`;
+      let name = `Anon ${anonArray[this.state.nextID]}`;
       // eslint-disable-next-line react/no-direct-mutation-state
       this.state.nextID = (this.state.nextID + 1) % anonArray.length;
       let gtid = 69;
@@ -36,19 +36,18 @@ class StudentQueue extends Component {
         time: new Date().getTime(),
       });
       this.updateState();
-
     } else if (event.keyCode === 8) {
       // backspace
       this.dequeue();
-      
+
       // Full-screen page
       const elem = document.documentElement;
       try {
         if (!document.fullscreenElement && elem.requestFullscreen) {
-            elem.requestFullscreen();
+          elem.requestFullscreen();
         }
       } catch (e) {
-          console.warn(e);
+        console.warn(e);
       }
     } else if (event.keyCode === 16) {
       // shift
@@ -58,6 +57,7 @@ class StudentQueue extends Component {
 
   dequeue() {
     let tempDQ = this.state.queue.shift();
+    if (tempDQ === undefined) return;
     this.setState({
       lastDQ: tempDQ,
     });
@@ -86,6 +86,7 @@ class StudentQueue extends Component {
       nextID: this.state.nextID,
       lastDQ: this.state.lastDQ,
     });
+    window.localStorage.setItem("OH-state", JSON.stringify(this.state));
   }
 
   submitGTID = async () => {
@@ -140,7 +141,7 @@ class StudentQueue extends Component {
         if (!name) {
           name = prompt(
             "Not enrolled in the course? Please enter your name to be added to the queue:",
-            "Guest"
+            "Guest",
           );
         }
       }
@@ -194,12 +195,20 @@ class StudentQueue extends Component {
   }
 
   componentDidMount() {
+    const savedState =
+      JSON.parse(window.localStorage.getItem("OH-state")) || this.state;
+    this.setState({
+      queue: savedState.queue,
+      entry: savedState.entry,
+      nextID: savedState.nextID,
+      lastDQ: savedState.lastDQ,
+    });
     document.addEventListener("keydown", this.keyDown);
     setInterval(
       function () {
         this.updateStats();
       }.bind(this),
-      1000 * 60 * 15
+      1000 * 60 * 15,
     ); //every 15 minutes
   }
 
